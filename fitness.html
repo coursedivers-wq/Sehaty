@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرياضة واللياقة | صحتي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1a5fb4;
+            --secondary-blue: #3584e4;
+            --light-blue: #e8f0fe;
+            --accent-blue: #62a0ea;
+            --dark-text: #1a1a2e;
+            --medium-text: #333344;
+            --light-text: #666677;
+            --white: #ffffff;
+            --off-white: #f8f9fc;
+            --border: #e0e4ec;
+            --success: #26a269;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: var(--dark-text);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(26, 95, 180, 0.3);
+        }
+
+        .header-top {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 8px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .header-top a:hover {
+            color: var(--white);
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-blue);
+        }
+
+        .logo-text {
+            color: var(--white);
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .header-btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 180px 0 60px;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        /* MAIN CONTENT */
+        .content-section {
+            background: var(--white);
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--primary-blue);
+            font-size: 36px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 2;
+            color: var(--medium-text);
+            margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--light-blue), rgba(229, 241, 255, 0.5));
+            padding: 25px;
+            border-right: 4px solid var(--primary-blue);
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: var(--medium-text);
+            line-height: 1.8;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .tip-card {
+            background: var(--off-white);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--success);
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tip-card h4 {
+            color: var(--success);
+            margin-bottom: 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-card p {
+            color: var(--medium-text);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .list-items {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .list-items li {
+            padding: 12px 0;
+            padding-right: 30px;
+            color: var(--medium-text);
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .list-items li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-text);
+            color: var(--white);
+            padding: 60px 0 0;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 25px 0;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: gap 0.3s;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .back-btn:hover {
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div>
+                    <a href="#"><i class="fas fa-phone"></i> +966 50 000 0000</a>
+                    <a href="#"><i class="fas fa-envelope"></i> info@sehaty.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>صحتي</h1>
+                        <span>دليلك للحياة الصحية</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="nutrition.html">التغذية</a></li>
+                        <li><a href="fitness.html" class="active">الرياضة</a></li>
+                        <li><a href="mental-health.html">الصحة النفسية</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="header-btn">اشترك معنا</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </a>
+            <h1>الرياضة واللياقة</h1>
+            <p>اكتشف فوائد الرياضة وتعلم كيفية الحفاظ على لياقة بدنية ممتازة</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-running"></i>
+                لماذا الرياضة مهمة جداً؟
+            </h2>
+            <p class="content-text">
+                الرياضة المنتظمة لا تحسن صحتك البدنية فحسب، بل تعزز أيضاً صحتك النفسية والعقلية. 
+                عندما تمارس الرياضة، يفرز جسمك هرمونات السعادة مما يحسن مزاجك ويقلل التوتر والقلق.
+                بالإضافة إلى ذلك، تساعدك الرياضة على الحفاظ على وزن صحي وتقوية العضلات والعظام.
+            </p>
+            <div class="highlight-box">
+                <h4>توصية من منظمة الصحة العالمية</h4>
+                <p>يجب على البالغين ممارسة 150 دقيقة من الرياضة متوسطة الشدة أسبوعياً، أو 75 دقيقة من الرياضة عالية الشدة للحفاظ على صحة جيدة.</p>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-heart"></i>
+                فوائد الرياضة
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4><i class="fas fa-heart-pulse"></i> صحة القلب</h4>
+                    <p>تحسن الدورة الدموية وتقلل ضغط الدم وتقلل خطر أمراض القلب والسكتة الدماغية.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-dumbbell"></i> قوة العضلات</h4>
+                    <p>تبني وتقوي العضلات والعظام وتحسن من المرونة والتوازن في الجسم.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-brain"></i> الصحة النفسية</h4>
+                    <p>تقلل التوتر والقلق والاكتئاب، وتحسن النوم والتركيز والإنتاجية.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-scale-balanced"></i> التحكم بالوزن</h4>
+                    <p>تساعد في حرق السعرات الحرارية والحفاظ على وزن صحي ومنع السمنة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPES OF EXERCISE -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-shapes"></i>
+                أنواع الرياضات المختلفة
+            </h2>
+            <p class="content-text">
+                هناك أنواع مختلفة من التمارين، وكل نوع له فوائده الخاصة:
+            </p>
+            <ul class="list-items">
+                <li><strong>تمارين الكارديو:</strong> المشي، الركض، السباحة، الدراجة. تحسن صحة القلب والجهاز التنفسي.</li>
+                <li><strong>تمارين القوة:</strong> رفع الأوزان، تمارين البدن. تقوي العضلات والعظام.</li>
+                <li><strong>تمارين المرونة:</strong> اليوجا، تمارين الإطالة. تحسن المرونة والتوازن.</li>
+                <li><strong>الرياضات الجماعية:</strong> كرة القدم، السلة، التنس. توفر متعة وتفاعلاً اجتماعياً.</li>
+            </ul>
+        </section>
+
+        <!-- GETTING STARTED -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-flag-checkered"></i>
+                كيف تبدأ برنامجك الرياضي
+            </h2>
+            <ul class="list-items">
+                <li><strong>ابدأ ببطء:</strong> لا تتوقع نتائج سريعة. ابدأ بتمارين خفيفة وزيادة الشدة تدريجياً.</li>
+                <li><strong>اختر ما يعجبك:</strong> مارس الرياضة التي تستمتع بها لتستمر معك طويلاً.</li>
+                <li><strong>كن منتظماً:</strong> حاول ممارسة الرياضة في نفس الوقت كل يوم.</li>
+                <li><strong>استرح بشكل كافي:</strong> أعط جسمك وقتاً للتعافي بين الجلسات الشاقة.</li>
+                <li><strong>اشرب ماء كثيراً:</strong> الترطيب مهم جداً أثناء التمرين.</li>
+                <li><strong>احم نفسك من الإصابات:</strong> ارتدِ ملابس وأحذية مناسبة، وقم بتمارين الإحماء.</li>
+                <li><strong>تتبع تقدمك:</strong> احتفظ بسجل لتمارينك ولاحظ التحسن.</li>
+                <li><strong>استشر طبيباً:</strong> خاصة إذا كنت تعاني من حالات صحية معينة.</li>
+            </ul>
+        </section>
+
+        <!-- TIPS FOR GROUPS -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-people-group"></i>
+                نصائح رياضية لفئات مختلفة
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4><i class="fas fa-child"></i> للأطفال</h4>
+                    <p>يجب أن يمارس الأطفال 60 دقيقة يومياً من الرياضة. اجعلها ممتعة وشاركهم فيها.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-person"></i> للبالغين</h4>
+                    <p>150 دقيقة أسبوعياً من الرياضة معتدلة أو 75 دقيقة عالية الشدة.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-person-cane"></i> لكبار السن</h4>
+                    <p>ركز على تمارين التوازن والقوة، واستشر طبيبك قبل البدء.</p>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-wheelchair"></i> للأشخاص ذوي الهمم</h4>
+                    <p>هناك تمارين مناسبة للجميع. استشر متخصصاً للحصول على برنامج مناسب.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4><i class="fas fa-heartbeat"></i> صحتي</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.8; margin-bottom: 20px;">
+                        منصتك الموثوقة للمعلومات الصحية والنصائح الطبية. نسعى لنشر الوعي الصحي في المجتمع.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>أقسام الموقع</h4>
+                    <ul>
+                        <li><a href="nutrition.html">التغذية السليمة</a></li>
+                        <li><a href="fitness.html">الرياضة واللياقة</a></li>
+                        <li><a href="mental-health.html">الصحة النفسية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@sehaty.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +966 50 000 0000</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> @sehaty</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 صحتي. جميع الحقوق محفوظة. | المعلومات الطبية على هذا الموقع لا تغني عن استشارة الطبيب</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
